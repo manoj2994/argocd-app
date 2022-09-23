@@ -11,7 +11,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
    
 spec:
-  defaultBackend:
+# defaultBackend:
 #    service:
 #      name: grafanaservice
 #      port:
