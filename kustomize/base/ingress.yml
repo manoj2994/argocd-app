@@ -8,7 +8,7 @@ metadata:
   namespace: monitoring
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    nginx.ingress.kubernetes.io/rewrite-path: /
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
    
 spec:
   defaultBackend:
@@ -18,13 +18,13 @@ spec:
 #        number: 8484
   rules:
    
-    - host: hello-world.info
+    - host: cisco.grafana.com
    
       http:
    
         paths:
    
-          - path: /graf
+          - path: /graf(/|$)(.*)
    
             pathType: Prefix
    
@@ -36,4 +36,4 @@ spec:
    
                 port:
    
-                  number: 8080
+                  number: 8484
