@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: prometheus-deployment
+    namespace: monitoring
+spec:
+    replicas: 1
+    selector:
+      matchLabels: 
+        tier: monitor
+    template:
+      metadata:
+        labels:
+          tier: monitor
+      spec:
+        containers:
+           - name: prometheus
+             image: prom/prometheus
+
+             ports:
+               - containerPort: 9090
+
+             volumeMounts:
+                - name: p-config
+                  mountPath: /etc/prometheus/
+                - name: prometheus-volume
+                  mountPath: /data
+
+        volumes:
+          - name: p-config
+            configMap:
+              name: promo-config
+          - name: prometheus-volume
+            persistentVolumeClaim:
+              claimName: pvc-promotheus

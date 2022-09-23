@@ -1,0 +1,9 @@
+resources:
+   - namespace.yml
+   - promotheus/pvc.yml
+   - promotheus/deploy-promotheus.yml
+   - promotheus/promotheus-service.yml
+   - grafana/pvc.yml
+   - grafana/deploy-grafana.yml
+   - grafana/grafana-service.yml
+   - ingress.yml

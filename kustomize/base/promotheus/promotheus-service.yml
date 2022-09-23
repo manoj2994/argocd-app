@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: promotheusservice
+  namespace: monitoring
+spec:
+  selector:
+    tier: monitor
+  ports:
+    - protocol: "TCP"
+      # Port accessible inside cluster
+      port: 8080
+      # Port to forward to inside the pod
+      targetPort: 9090
+      # Port accessible outside cluster
+      nodePort: 30000
+  type: NodePort

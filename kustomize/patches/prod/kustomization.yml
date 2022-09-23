@@ -1,0 +1,11 @@
+bases:
+  - ../../base/
+
+commonLabels:
+   env: prod
+namespace: monitoring
+
+images:
+- name: grafana
+  newName: grafana/grafana
+  newTag: latest

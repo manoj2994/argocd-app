@@ -1,0 +1,12 @@
+bases:
+  - ../../base/
+
+commonLabels:
+   env: Dev
+namespace: monitoring
+namePrefix: dev-
+#nameSuffix: "01"
+
+images:
+- name: grafana
+  newTag: "latest"
