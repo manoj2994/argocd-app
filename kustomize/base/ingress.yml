@@ -23,7 +23,7 @@ spec:
    
         paths:
    
-          - path: /graf
+          - path: /
    
             pathType: Prefix
    
